@@ -2,8 +2,10 @@
 
 describe("A game", function() {
 
+  var game;
+
   beforeEach(function() {
-    var game = new BowlingGame();
+    game = new BowlingGame();
   });
 
   describe('has', function() {
