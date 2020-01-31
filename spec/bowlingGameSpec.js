@@ -21,21 +21,24 @@ describe("A game", function() {
     it('the points for a normal frame', function() {
       game.inputRoll(3);
       game.inputRoll(3);
-      expect(game.score).toEqual(6)
+      game.calculateScore();
+      expect(game.cumulativeScore).toEqual(6)
     });
 
     it('the bonus points for a spare', function() {
       game.inputRoll(8);
       game.inputRoll(2);
       game.inputRoll(2);
-      expect(game.score).toEqual(14)
+      game.calculateScore();
+      expect(game.cumulativeScore).toEqual(12)
     });
 
     it('the bonus points for a strike', function() {
       game.inputRoll(10);
       game.inputRoll(2);
       game.inputRoll(2);
-      expect(game.score).toEqual(18)
+      game.calculateScore();
+      expect(game.cumulativeScore).toEqual(18)
     });
   });
 });
